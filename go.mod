@@ -3,11 +3,9 @@ module github.com/loft-orbital/slogx
 
 go 1.23.6
 
-toolchain go1.23.0
-
 require (
 	github.com/lmittmann/tint v1.0.7
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.70.0
 )
 
