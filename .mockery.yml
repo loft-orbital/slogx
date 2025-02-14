@@ -1,0 +1,13 @@
+# Copyright © Loft Orbital Solutions Inc.
+# Use of this source code is governed by a Apache-2.0-style
+# license that can be found in the LICENSE file.
+
+issue-845-fix: True
+resolve-type-alias: False
+
+dir: "internal/mocks/{{.PackagePath}}"
+boilerplate-file: "./hack/boilerplate.go.txt"
+packages:
+  google.golang.org/grpc:
+    interfaces:
+      ServerStream: {}

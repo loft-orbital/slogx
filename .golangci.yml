@@ -1,0 +1,57 @@
+# Copyright © Loft Orbital Solutions Inc.
+# Use of this source code is governed by a Apache-2.0-style
+# license that can be found in the LICENSE file.
+
+run:
+  timeout: 5m
+
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  gocyclo:
+    min-complexity: 15
+  gofmt:
+    simplify: true
+  revive:
+    rules:
+      - name: argument-limit
+      - name: file-header
+      - name: indent-error-flow
+      - name: unreachable-code
+      - name: line-length-limit
+        severity: error
+        arguments: [120]
+
+linters:
+  enable:
+    - asciicheck
+    - dupl
+    - errcheck
+    - gocognit
+    - gocyclo
+    - gofmt
+    - govet
+    - ineffassign
+    - misspell
+    - revive
+    - staticcheck
+    - typecheck
+    - unused
+  disable:
+    - lll
+
+issues:
+  max-issues-per-linter: 50
+  max-same-issues: 5
+  exclude-use-default: true
+  exclude-generated: lax
+  exclude-rules:
+    # Exclude some linters from running on tests files.
+    - path: _test\.go
+      linters:
+        - dupl
+        - errcheck
+        - gocyclo
+        - gosec
