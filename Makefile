@@ -2,8 +2,6 @@
 # Use of this source code is governed by a Apache-2.0-style
 # license that can be found in the LICENSE file.
 
-GO_FILESi := $(shell go list -f '{{$$d := .Dir}}{{range .GoFiles}}{{printf "%s/%s\n" $$d .}}{{end}}' ./...)
-
 all: mocks build test lint ## Run all targets
 .PHONY: all
 
@@ -24,7 +22,7 @@ lint: ## Lint the code
 
 fmt: ## Format the code
 	@echo "Formatting code..."
-	gofmt -s -w $(GO_FILES)
+	gofmt -s -w .
 .PHONY: fmt
 
 tidy: ## Tidy up Go modules
