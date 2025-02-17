@@ -67,7 +67,7 @@ import (
 
 func main() {
   dopts := []grpc.DialOptions {
-    grpc.WithStreamInterceptor(log.StreamClientInterceptor(slogx.Default)),
+    grpc.WithStreamInterceptor(slogx.StreamClientInterceptor(slogx.Default)),
     // ... others gRPC dial options
   }
 
