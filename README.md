@@ -154,7 +154,7 @@ func setupGRPCClient() (*grpc.ClientConn, error) {
 	logger := slogx.Default
 	
 	// Add client interceptors
-	conn, err := grpc.NewClient("localhost:50051",
+	conn, err := grpc.Dial("localhost:50051",
 		grpc.WithUnaryInterceptor(slogx.UnaryClientInterceptor(logger)),
 		grpc.WithStreamInterceptor(slogx.StreamClientInterceptor(logger)),
 		// ... other dial options
