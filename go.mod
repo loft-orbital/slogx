@@ -6,7 +6,7 @@ go 1.23.6
 require (
 	github.com/lmittmann/tint v1.1.2
 	github.com/stretchr/testify v1.11.1
-	google.golang.org/grpc v1.75.0
+	google.golang.org/grpc v1.75.1
 )
 
 require (
