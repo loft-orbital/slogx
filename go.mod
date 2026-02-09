@@ -4,7 +4,7 @@ module github.com/loft-orbital/slogx
 go 1.23.6
 
 require (
-	github.com/lmittmann/tint v1.1.2
+	github.com/lmittmann/tint v1.1.3
 	github.com/stretchr/testify v1.11.1
 	google.golang.org/grpc v1.75.0
 )
